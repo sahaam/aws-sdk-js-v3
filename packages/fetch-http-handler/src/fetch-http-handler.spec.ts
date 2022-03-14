@@ -206,7 +206,7 @@ describe.skip(FetchHttpHandler.name, () => {
 
     await fetchHttpHandler.handle({} as any, {});
 
-    expect(mockRequest.mock.calls[0][1].keepalive).toBe(true)
+    expect(mockRequest.mock.calls[0][1].keepalive).toBe(true);
   });
 
   it("will pass keepalive to request", async () => {
@@ -222,11 +222,11 @@ describe.skip(FetchHttpHandler.name, () => {
     const mockFetch = jest.fn().mockResolvedValue(mockResponse);
     (global as any).fetch = mockFetch;
 
-    const fetchHttpHandler = new FetchHttpHandler({ keepAlive: false});
+    const fetchHttpHandler = new FetchHttpHandler({ keepAlive: false });
 
     await fetchHttpHandler.handle({} as any, {});
 
-    expect(mockRequest.mock.calls[0][1].keepalive).toBe(false)
+    expect(mockRequest.mock.calls[0][1].keepalive).toBe(false);
   });
 
   it("will pass timeout to request timeout", async () => {
